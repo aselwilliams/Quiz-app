@@ -6,20 +6,26 @@
   align-items: center;
   flex-direction: column;
 }
-.menu, .quiz{
-  width: 500px;
+.menu,
+.quiz,
+.endScreen {
+  width: 520px;
   height: 500px;
   border-radius: 10px;
-  background: lightseagreen;
+  background: deeppink;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-.menu,.quiz{
-  color:white;
+.menu,
+.quiz,
+.endScreen {
+  color: white;
 }
-.menu button, .quiz button{
+.menu button,
+.quiz button,
+.endScreen button {
   width: 300px;
   height: 50px;
   margin: 5px;
@@ -28,10 +34,15 @@
   font-size: 20px;
   cursor: pointer;
 }
-.options{
+.options {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+.next,
+.finish {
+  background: black;
+  color: white;
 }
