@@ -1,12 +1,26 @@
-import React,{useState} from 'react';
-import {Questions} from '../QBank'
+import React,{useState,useContext} from 'react';
+import {Questions} from '../QBank';
+import {QuizContext} from '../context-api/QuizContext'
 
 function Quiz() {
     const [currQuestion, setCurrQuestion]=useState(0)
     const [chosen, setChosen]=useState('')
+    const {score,setScore,setGameState} =useContext(QuizContext)
 
     const nextQuestion=()=>{
-        
+        if(Questions[currQuestion].answer===chosen){
+            setScore(score+1)
+        }
+        alert(`You score is ${score}`)
+        setCurrQuestion(currQuestion+1)
+    }
+
+    const finishQuiz=()=>{
+        if(Questions[currQuestion].answer===chosen){
+            setScore(score+1)
+        }
+        alert(`You score is ${score}`)
+        setGameState('endScreen')
     }
   return (
     <div className='quiz'>
@@ -17,7 +31,8 @@ function Quiz() {
             <button onClick={()=>setChosen('C')}>{Questions[currQuestion].optionC}</button>
             <button onClick={()=>setChosen('D')}>{Questions[currQuestion].optionD}</button>
         </div>
-        <button onClick={()=>setCurrQuestion(currQuestion<Questions.length-1 ? currQuestion+1 : 0)}>Next Question</button>
+        {currQuestion===Questions.length-1 ? (<button onClick={finishQuiz}>Finish Quiz</button>) : (<button onClick={nextQuestion}>Next Question</button>)}
+        
     </div>
   )
 }

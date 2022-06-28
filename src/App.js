@@ -8,7 +8,7 @@ import Quiz from './components/Quiz';
 
 function App() {
   // const [gameState, setGameState]=useState('menu')
-  const [score, setScore]=useState(0)
+ 
   const {gameState,setGameState}=useContext(QuizContext)
   return (
     <div className="App">
