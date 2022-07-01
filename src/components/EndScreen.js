@@ -12,7 +12,7 @@ function EndScreen() {
   return (
     <div className='endScreen'>
         <h1>Quiz is Completed</h1>
-        <h3>Your score: {score}/ {Questions.length}</h3>
+        <h2>Your score: {score}/ {Questions.length}</h2>
         <button onClick={restartQuiz}>Restart Quiz</button>
     </div>
   )
